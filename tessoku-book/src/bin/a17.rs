@@ -3,15 +3,16 @@ use proconio::input;
 fn main() {
     input! {
         n: usize,
-        h: [isize; n],
+        a: [usize; n - 1],
+        b: [usize; n - 2],
     }
 
     let mut dp = Vec::new();
     dp.push(0);
-    dp.push((h[0] - h[1]).abs());
+    dp.push(a[0]);
 
     for i in 2..n {
-        dp.push(((h[i] - h[i - 1]).abs() + dp[i - 1]).min((h[i] - h[i - 2]).abs() + dp[i - 2]));
+        dp.push((dp[i - 1] + a[i - 1]).min(dp[i - 2] + b[i - 2]));
     }
 
     let mut place = n - 1;
@@ -22,7 +23,7 @@ fn main() {
         if place == 0 {
             break;
         }
-        if dp[place - 1] + (h[place - 1] - h[place]).abs() == dp[place] {
+        if dp[place - 1] + a[place - 1] == dp[place] {
             place -= 1;
         } else {
             place -= 2;
