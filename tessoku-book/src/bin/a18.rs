@@ -7,7 +7,7 @@ fn main() {
         a: [usize; n],
     }
 
-    let mut dp = vec![vec![false;s + 1]; n + 1];
+    let mut dp = vec![vec![false; s + 1]; n + 1];
     dp[0][0] = true;
 
     for i in 1..=n {
@@ -25,5 +25,5 @@ fn main() {
         }
     }
 
-    println!("{}", if dp[n][s] {"Yes"} else {"No"});
+    println!("{}", if dp[n][s] { "Yes" } else { "No" });
 }
