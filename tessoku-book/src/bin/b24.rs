@@ -27,7 +27,7 @@ fn get_lis_value(a: &[isize]) -> usize {
                 } else {
                     lis[pos] = item;
                 }
-            },
+            }
         }
     }
     lis.len()
