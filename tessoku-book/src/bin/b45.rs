@@ -1,3 +1,11 @@
+use proconio::input;
+
 fn main() {
-    todo!();
+    input! {
+        a: isize,
+        b: isize,
+        c: isize,
+    }
+
+    println!("{}", if a + b + c == 0 { "Yes" } else { "No" })
 }
