@@ -15,26 +15,21 @@ fn main() {
     }
 
     a.sort_unstable();
-}
 
-fn search(arr: Vec<usize>, m: usize) -> usize {
-    let n = arr.len();
-    let mut l = 0;
-    let mut r = arr[n - 1];
-    let mut x = (l + r) / 2;
-
-    while l <= r {
-        let total = get_total(arr, x);
-        if total 
-    }
-}
-
-fn get_total(arr: Vec<usize>, x: usize) -> usize {
-    let mut total = 0;
-
-    for i in arr {
-        total += i.min(x);
+    let mut ok = 0;
+    let mut ng = 1000000000;
+    while ng - ok > 1 {
+        let mid = (ok + ng) / 2;
+        let mut tmp = 0;
+        for &i in &a {
+            tmp += mid.min(i);
+        }
+        if tmp <= m {
+            ok = mid;
+        } else {
+            ng = mid;
+        }
     }
 
-    total
+    println!("{}", ok)
 }
