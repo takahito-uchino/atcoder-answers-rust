@@ -11,15 +11,15 @@ fn main() {
     }
 
     let mut same = 0;
-    for (i, x) in a.iter().enumerate() {
-        if i == *x {
+    for i in 0..n {
+        if i == a[i] {
             same += 1;
         }
     }
 
     let mut answer = same * (same - 1) / 2;
-    for (i, j) in a.iter().enumerate() {
-        if i < *j && a[*j] == i {
+    for i in 0..n {
+        if a[i] < n && i < a[i] && a[a[i]] == i {
             answer += 1;
         }
     }
