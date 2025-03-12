@@ -761,6 +761,7 @@ name = "tessoku-book-c20"
 path = "src/bin/c20.rs"
 
 [dependencies]
+sized-chunks = "0.6.5"
 num = "^0.2.1"
 num-bigint = "^0.2.6"
 num-complex = "^0.2.4"

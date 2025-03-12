@@ -111,7 +111,7 @@ dependencies = [
  "bitmaps",
  "rand_core",
  "rand_xoshiro",
- "sized-chunks",
+ "sized-chunks 0.5.3",
  "typenum",
  "version_check",
 ]
@@ -570,6 +570,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "sized-chunks"
+version = "0.6.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "16d69225bde7a69b235da73377861095455d298f2b970996eec25ddbb42b3d1e"
+dependencies = [
+ "bitmaps",
+ "typenum",
+]
+
+[[package]]
 name = "smallvec"
 version = "1.14.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -653,6 +663,7 @@ dependencies = [
  "rand_pcg",
  "regex",
  "rustc-hash",
+ "sized-chunks 0.6.5",
  "smallvec",
  "superslice",
  "text_io",
