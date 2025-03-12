@@ -47,7 +47,7 @@ num-rational = "=0.2.4"
 num-traits = "=0.2.11"
 num-derive = "=0.3.0"
 ndarray = "=0.13.0"
-nalgebra = "=0.20.0"
+nalgebra = "=0.27.1"
 alga = "=0.9.3"
 libm = "=0.2.1"
 rand = { version = "=0.7.3", features = ["small_rng"] }
@@ -76,7 +76,7 @@ proconio = { version = "=0.3.6", features = ["derive"] }
 text_io = "=0.1.8"
 whiteread = "=0.5.0"
 rustc-hash = "=1.1.0"
-smallvec = "=1.2.0"
+smallvec = "=1.6.1"
 '''
 dev-dependencies = '''
 #atcoder-202004-lock = { git = "https://github.com/qryxip/atcoder-202004-lock" }
@@ -99,7 +99,7 @@ platform = "atcoder"
 #
 # - `contest`:      Contest ID. **May be nil**
 # - `package_name`: Package name
-path = "./{{ contest }}"
+path = "./src/{{ contest }}"
 
 #[new]
 #kind = "oj-api"
@@ -126,7 +126,6 @@ path = "./{{ contest }}"
 
 [test]
 # Toolchain for the test. (optional)
-toolchain = "1.70.0"
 # Profile for `cargo build`. ("dev" | "release")
 #
 # Defaults to `"dev"`.
@@ -135,7 +134,7 @@ toolchain = "1.70.0"
 [submit]
 kind = "file"
 path = "{{ src_path }}"
-language_id = "5054"
+language_id = "5040"
 #[submit]
 #kind = "command"
 #args = ["cargo", "equip", "--exclude-atcoder-crates", "--resolve-cfgs", "--remove", "docs", "--minify", "libs", "--rustfmt", "--check", "--bin", "{{ bin_name }}"]
